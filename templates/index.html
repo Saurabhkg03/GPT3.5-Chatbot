@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GPT-3.5 Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title">GPT-3.5 Chatbot
+          <div class="aurora">
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+          </div>
+        </h1>
+      </div>
+    <form method="post" onsubmit="showLoading()">
+
+        <div class="form-container">
+            <form method="post">
+                <div class="label-container">
+                    <label class="labels anim-typewriter">Ask me about anything..</label>
+                </div>
+                
+                <label for="question"></label><br>
+                <div class="search-container">
+                    <input type="text" id="question" name="question" autocomplete="off" placeholder="Enter your question"
+                        onkeyup="handleKeyUp(event)">
+                </div>
+                <div class="button-container">
+                <button class="button type1" type="submit">
+                    <span class="btn-txt">Submit</span>
+                </button>
+            </div>
+            <div id="loading-overlay" class="loading-overlay">
+                <div class="spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+              </div>
+
+    </form>
+    {% if answer %}
+    <h2>Answer:</h2>
+    <p id="typewriter">{{ answer }}</p>
+    {% endif %}
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
